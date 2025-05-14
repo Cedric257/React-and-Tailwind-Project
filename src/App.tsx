@@ -2,11 +2,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './App.css'
 import { faHouse } from '@fortawesome/free-solid-svg-icons'
 import { ThemeSwitch } from './components/theme-switch'
+import { NavBars } from './components/navbars'
 
 export default function App() {
 
   return (
     <>
+    <NavBars/>
   <h1 className="text-3xl font-bold underline text-center bg-red-800"> <FontAwesomeIcon icon={faHouse} className='text-indigo-600 text-4xl '/>
    <span className='ps-3'>Hello world!</span>
   </h1>
