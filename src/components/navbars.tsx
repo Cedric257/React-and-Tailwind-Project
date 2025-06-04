@@ -1,132 +1,91 @@
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
-const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false },
-]
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
-}
-
-export function NavBars() {
+export default function NavBars() {
   return (
-    <Disclosure as="nav" className="bg-gray-800 dark:bg-amber-700">
-      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div className="relative flex h-16 items-center justify-between">
-          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            {/* Mobile menu button*/}
-            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset">
-              <span className="absolute -inset-0.5" />
-              <span className="sr-only">Open main menu</span>
-              <Bars3Icon aria-hidden="true" className="block size-6 group-data-open:hidden" />
-              <XMarkIcon aria-hidden="true" className="hidden size-6 group-data-open:block" />
-            </DisclosureButton>
+    <header className="w-full">
+      <div className="bg-white dark:bg-[#1a2150] w-full h-[64px] flex items-center border-b border-gray-100 dark:border-[#22295a]">
+        <div className="max-w-[1380px] w-full mx-auto flex items-center justify-between px-8">
+          <div className="flex-shrink-0 select-none font-serif text-[2rem] leading-none">
+            <span className="text-[#23295A] dark:text-white font-bold tracking-wider">MED</span>
+            <span className="text-[#28A8EA] dark:text-[#66cfff] font-bold tracking-wider">ICAL</span>
           </div>
-          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-            <div className="flex shrink-0 items-center">
-              <img
-                alt="Your Company"
-                src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
-                className="h-8 w-auto"
-              />
-            </div>
-            <div className="hidden sm:ml-6 sm:block">
-              <div className="flex space-x-4">
-                {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    aria-current={item.current ? 'page' : undefined}
-                    className={classNames(
-                      item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                      'rounded-md px-3 py-2 text-sm font-medium',
-                    )}
-                  >
-                    {item.name}
-                  </a>
-                ))}
+          <div className="flex items-center gap-10">
+            <div className="flex items-center gap-2">
+              <svg className="w-7 h-7 text-[#28A8EA] dark:text-[#66cfff]" fill="none" stroke="currentColor" strokeWidth={2.2} viewBox="0 0 24 24">
+                <path d="M22 16.92V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                <path d="M16 2l6 6"></path>
+                <path d="M3 6l18 18"></path>
+              </svg>
+              <div className="flex flex-col">
+                <span className="text-xs font-semibold text-[#23295A] dark:text-white">EMERGENCY</span>
+                <span className="text-xs text-[#28A8EA] dark:text-[#66cfff] font-medium"> (+257) 61377295</span>
               </div>
             </div>
-          </div>
-          <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            <button
-              type="button"
-              className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
-            >
-              <span className="absolute -inset-1.5" />
-              <span className="sr-only">View notifications</span>
-              <BellIcon aria-hidden="true" className="size-6" />
-            </button>
-
-            {/* Profile dropdown */}
-            <Menu as="div" className="relative ml-3">
-              <div>
-                <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
-                  <span className="absolute -inset-1.5" />
-                  <span className="sr-only">Open user menu</span>
-                  <img
-                    alt=""
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                    className="size-8 rounded-full"
-                  />
-                </MenuButton>
+            <div className="flex items-center gap-2">
+              <svg className="w-7 h-7 text-[#23295A] dark:text-[#66cfff]" fill="none" stroke="currentColor" strokeWidth={2.2} viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </svg>
+              <div className="flex flex-col">
+                <span className="text-xs font-semibold text-[#23295A] dark:text-white">WORK HOUR</span>
+                <span className="text-xs text-[#28A8EA] dark:text-[#66cfff] font-medium">08:00 - 20:00 Everyday</span>
               </div>
-              <MenuItems
-                transition
-                className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 transition focus:outline-hidden data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
-              >
-                <MenuItem>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
-                  >
-                    Your Profile
-                  </a>
-                </MenuItem>
-                <MenuItem>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
-                  >
-                    Settings
-                  </a>
-                </MenuItem>
-                <MenuItem>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
-                  >
-                    Sign out
-                  </a>
-                </MenuItem>
-              </MenuItems>
-            </Menu>
+            </div>
+            <div className="flex items-center gap-2">
+              <svg className="w-7 h-7 text-[#23295A] dark:text-[#66cfff]" fill="none" stroke="currentColor" strokeWidth={2.2} viewBox="0 0 24 24">
+                <path d="M12 21c-4.418 0-8-5.373-8-12a8 8 0 1 1 16 0c0 6.627-3.582 12-8 12z" />
+                <circle cx="12" cy="9" r="3" />
+              </svg>
+              <div className="flex flex-col">
+                <span className="text-xs font-semibold text-[#23295A] dark:text-white">LOCATION</span>
+                <span className="text-xs text-[#28A8EA] dark:text-[#66cfff] font-medium">Boulevard Melchior Ndadaye</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <DisclosurePanel className="sm:hidden">
-        <div className="space-y-1 px-2 pt-2 pb-3">
-          {navigation.map((item) => (
-            <DisclosureButton
-              key={item.name}
-              as="a"
-              href={item.href}
-              aria-current={item.current ? 'page' : undefined}
-              className={classNames(
-                item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                'block rounded-md px-3 py-2 text-base font-medium',
-              )}
+      <nav className="bg-[#232E6A] dark:bg-[#10162e] h-[55px] w-full flex items-center border-b-2 border-[#6ec1f6] dark:border-[#1bb7fa]">
+        <div className="max-w-[1380px] mx-auto w-full flex items-center justify-between px-8">
+          <ul className="flex items-center gap-8">
+            <li>
+              <a href="#" className="text-white dark:text-[#dce8fa] font-semibold text-[17px] px-2 py-1 rounded transition-colors duration-150 bg-transparent hover:text-[#6EC1F6] dark:hover:text-[#28A8EA] focus:outline-none focus:ring-0"
+                 style={{ fontWeight: 700 }}>
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#" className="text-white dark:text-[#dce8fa] font-normal text-[17px] px-2 py-1 rounded transition-colors duration-150 bg-transparent hover:text-[#6EC1F6] dark:hover:text-[#28A8EA]">About us</a>
+            </li>
+            <li>
+              <a href="#" className="text-white dark:text-[#dce8fa] font-normal text-[17px] px-2 py-1 rounded transition-colors duration-150 bg-transparent hover:text-[#6EC1F6] dark:hover:text-[#28A8EA]">Services</a>
+            </li>
+            <li>
+              <a href="#" className="text-white dark:text-[#dce8fa] font-normal text-[17px] px-2 py-1 rounded transition-colors duration-150 bg-transparent hover:text-[#6EC1F6] dark:hover:text-[#28A8EA]">Doctors</a>
+            </li>
+            <li>
+              <a href="#" className="text-white dark:text-[#dce8fa] font-normal text-[17px] px-2 py-1 rounded transition-colors duration-150 bg-transparent hover:text-[#6EC1F6] dark:hover:text-[#28A8EA]">News</a>
+            </li>
+            <li>
+              <a href="#" className="text-white dark:text-[#dce8fa] font-normal text-[17px] px-2 py-1 rounded transition-colors duration-150 bg-transparent hover:text-[#6EC1F6] dark:hover:text-[#28A8EA]">Contact</a>
+            </li>
+          </ul>
+          <div className="flex items-center gap-2">
+            <button className="p-2">
+              <svg className="w-6 h-6 text-white dark:text-[#dce8fa]" fill="none" stroke="currentColor" strokeWidth={2.2} viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="8" />
+                <path d="M21 21l-4.35-4.35" />
+              </svg>
+            </button>
+            <a
+              href="#"
+              className="ml-2 px-7 py-2 rounded-full bg-[#b7cef7] dark:bg-[#20306b] text-[#232E6A] dark:text-[#c3e7fa] font-semibold text-[17px] shadow-none hover:bg-[#6ec1f6] dark:hover:bg-[#28A8EA] transition-colors duration-150"
+              style={{ minWidth: 150, textAlign: "center" }}
             >
-              {item.name}
-            </DisclosureButton>
-          ))}
+              Appointment
+            </a>
+          </div>
         </div>
-      </DisclosurePanel>
-    </Disclosure>
-  )
+      </nav>
+    </header>
+  );
 }

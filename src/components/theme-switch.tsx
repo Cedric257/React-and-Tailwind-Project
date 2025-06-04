@@ -1,29 +1,21 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from "react";
 
-interface ThemeSwitchProps {
-  className?: string;
-}
-
-export function ThemeSwitch({ className = '' }: ThemeSwitchProps) {
-  const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem('darkMode') === 'true'
-  })
-
+export function ThemeSwitch() {
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
+    function applySystemTheme() {
+      const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.classList.remove("light", "dark");
+      document.documentElement.classList.add(isDark ? "dark" : "light");
     }
-    localStorage.setItem('darkMode', darkMode.toString())
-  }, [darkMode])
+    applySystemTheme();
 
-  return (
-    <button
-      onClick={() => setDarkMode(!darkMode)}
-      className={`px-4 py-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors ${className}`}
-    >
-      {darkMode ? '🌞': '🌙'}
-    </button>
-  )
+    const mq = window.matchMedia("(prefers-color-scheme: dark)");
+    mq.addEventListener("change", applySystemTheme);
+
+    return () => {
+      mq.removeEventListener("change", applySystemTheme);
+    };
+  }, []);
+
+  return null;
 }
