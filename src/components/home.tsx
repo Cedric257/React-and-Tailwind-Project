@@ -17,7 +17,7 @@ export default function Home() {
             <button className="bg-white border border-blue-700 text-blue-700 px-6 py-2 rounded hover:bg-blue-100 transition">Prendre rendez-vous</button>
           </div>
           <div className="w-full flex justify-center">
-            <img src="/doctor-hero.jpg" alt="Médecin" className="h-56 md:h-80 object-cover rounded shadow-lg border border-blue-100 dark:border-blue-900" />
+            <img src="src/assets/favicon.png" alt="Médecin" className="h-56 md:h-80 object-cover rounded shadow-lg border border-blue-100 dark:border-blue-900" />
           </div>
         </div>
       </section>
