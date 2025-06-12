@@ -1,6 +1,6 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faPhoneVolume } from '@fortawesome/free-solid-svg-icons';
+import { faClock, faLocationDot, faPhoneVolume } from '@fortawesome/free-solid-svg-icons';
 
 export default function NavBars() {
   return (
@@ -27,10 +27,7 @@ export default function NavBars() {
             </div>
           </div>
           <div className="flex items-center gap-2">
-            <svg className="w-7 h-7 text-[#23295A] dark:text-[#66cfff]" fill="none" stroke="currentColor" strokeWidth={2.2} viewBox="0 0 24 24">
-              <path d="M12 21c-4.418 0-8-5.373-8-12a8 8 0 1 1 16 0c0 6.627-3.582 12-8 12z" />
-              <circle cx="12" cy="9" r="3" />
-            </svg>
+          <FontAwesomeIcon icon={faLocationDot} className='text-[#23295A] dark:text-white text-2xl' />
             <div className="flex flex-col">
               <span className="text-xs font-semibold text-[#23295A] dark:text-white">LOCATION</span>
               <span className="text-xs text-[#28A8EA] dark:text-[#66cfff] font-medium">Boulevard Melchior Ndadaye</span>

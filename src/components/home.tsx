@@ -4,23 +4,41 @@ export default function Home() {
   return (
     <div className="bg-gray-50 dark:bg-blue-950 min-h-screen flex flex-col">
       <NavBars />
-      <section className="relative bg-white dark:bg-blue-900 py-12 px-4 text-center">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 text-blue-900 dark:text-white">
-            Leading the Way in Medical Excellence
-          </h1>
-          <p className="text-lg text-gray-700 dark:text-gray-200 mb-6">
-            Découvrez des soins médicaux de qualité avec notre équipe d'experts.
-          </p>
-          <div className="flex justify-center gap-4 mb-4 flex-wrap">
-            <button className="bg-blue-700 text-white px-6 py-2 rounded hover:bg-blue-800 transition">Nos Services</button>
-            <button className="bg-white border border-blue-700 text-blue-700 px-6 py-2 rounded hover:bg-blue-100 transition">Prendre rendez-vous</button>
+    <section className="relative min-h-screen bg-gray-100 dark:bg-gray-900 flex flex-col justify-center items-center">
+      <div className="absolute inset-0">
+        <img
+          src="src/assets/favicon.png"
+          alt="Medical background"
+          className="w-full h-full object-cover opacity-80 dark:opacity-60"
+        />
+        <div className="absolute inset-0 bg-white/40 dark:bg-black/60" />
+      </div>
+      <div className="relative z-10 flex flex-col items-start max-w-3xl px-6 py-24">
+        <span className="uppercase tracking-widest text-blue-500 font-semibold text-sm mb-2 dark:text-blue-300">
+          Caring for Life
+        </span>
+        <h1 className="text-4xl md:text-5xl font-bold text-blue-900 dark:text-white leading-tight mb-6">
+          Leading the Way <br /> in Medical Excellence
+        </h1>
+        <button className="rounded-full bg-blue-200 text-blue-900 dark:bg-blue-700 dark:text-white px-6 py-2 font-semibold mb-10 shadow-md hover:bg-blue-300 dark:hover:bg-blue-600 transition-all">
+          Our Services
+        </button>
+        <div className="flex gap-4 w-full max-w-2xl">
+          <div className="flex-1 bg-blue-900 text-white dark:bg-blue-800 rounded-lg p-5 flex items-center gap-2 shadow-lg">
+            <span className="material-symbols-outlined text-3xl">calendar_month</span>
+            <span className="font-semibold">Book an Appointment</span>
           </div>
-          <div className="w-full flex justify-center">
-            <img src="src/assets/favicon.png" alt="Médecin" className="h-56 md:h-80 object-cover rounded shadow-lg border border-blue-100 dark:border-blue-900" />
+          <div className="flex-1 bg-blue-100 text-blue-900 dark:bg-blue-700 dark:text-white rounded-lg p-5 flex items-center gap-2 shadow-lg">
+            <span className="material-symbols-outlined text-3xl">groups</span>
+            <span className="font-semibold">Book an Appointment</span>
+          </div>
+          <div className="flex-1 bg-blue-400 text-white dark:bg-blue-600 dark:text-white rounded-lg p-5 flex items-center gap-2 shadow-lg">
+            <span className="material-symbols-outlined text-3xl">payments</span>
+            <span className="font-semibold">Book an Appointment</span>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       <section className="py-12 px-4 bg-gray-50 dark:bg-blue-950">
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
