@@ -1,10 +1,12 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NavBars from "./navbars";
+import { faCalendarDays, faMoneyBills, faUsers } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   return (
     <div className="bg-gray-50 dark:bg-blue-950 min-h-screen flex flex-col">
       <NavBars />
-    <section className="relative min-h-screen bg-gray-100 dark:bg-gray-900 flex flex-col justify-center items-center">
+    <section className="relative z-10 flex flex-col justify-center items-center w-full  px-6 py-24 mx-auto">
       <div className="absolute inset-0">
         <img
           src="src/assets/favicon.png"
@@ -23,22 +25,25 @@ export default function Home() {
         <button className="rounded-full bg-blue-200 text-blue-900 dark:bg-blue-700 dark:text-white px-6 py-2 font-semibold mb-10 shadow-md hover:bg-blue-300 dark:hover:bg-blue-600 transition-all">
           Our Services
         </button>
-        <div className="flex gap-4 w-full max-w-2xl">
+
+      </div>
+          <div className="flex gap-4 w-full max-w-2xl absolute bottom-0 translate-y-1/2  ">
           <div className="flex-1 bg-blue-900 text-white dark:bg-blue-800 rounded-lg p-5 flex items-center gap-2 shadow-lg">
-            <span className="material-symbols-outlined text-3xl">calendar_month</span>
+            <span className="material-symbols-outlined text-3xl"><FontAwesomeIcon icon={faCalendarDays} /></span>
             <span className="font-semibold">Book an Appointment</span>
           </div>
           <div className="flex-1 bg-blue-100 text-blue-900 dark:bg-blue-700 dark:text-white rounded-lg p-5 flex items-center gap-2 shadow-lg">
-            <span className="material-symbols-outlined text-3xl">groups</span>
+            <span className="material-symbols-outlined text-3xl"><FontAwesomeIcon icon={faUsers} /></span>
             <span className="font-semibold">Book an Appointment</span>
           </div>
           <div className="flex-1 bg-blue-400 text-white dark:bg-blue-600 dark:text-white rounded-lg p-5 flex items-center gap-2 shadow-lg">
-            <span className="material-symbols-outlined text-3xl">payments</span>
+            <span className="material-symbols-outlined text-3xl"><FontAwesomeIcon icon={faMoneyBills} /></span>
             <span className="font-semibold">Book an Appointment</span>
           </div>
         </div>
-      </div>
     </section>
+
+
 
       <section className="py-12 px-4 bg-gray-50 dark:bg-blue-950">
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
