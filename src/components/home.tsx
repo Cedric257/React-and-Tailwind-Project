@@ -27,20 +27,21 @@ export default function Home() {
         </button>
 
       </div>
-          <div className="flex gap-4 w-full max-w-2xl absolute bottom-0 translate-y-1/2  ">
-          <div className="flex-1 bg-blue-900 text-white dark:bg-blue-800 rounded-lg p-5 flex items-center gap-2 shadow-lg">
-            <span className="material-symbols-outlined text-3xl"><FontAwesomeIcon icon={faCalendarDays} /></span>
-            <span className="font-semibold">Book an Appointment</span>
-          </div>
-          <div className="flex-1 bg-blue-100 text-blue-900 dark:bg-blue-700 dark:text-white rounded-lg p-5 flex items-center gap-2 shadow-lg">
-            <span className="material-symbols-outlined text-3xl"><FontAwesomeIcon icon={faUsers} /></span>
-            <span className="font-semibold">Book an Appointment</span>
-          </div>
-          <div className="flex-1 bg-blue-400 text-white dark:bg-blue-600 dark:text-white rounded-lg p-5 flex items-center gap-2 shadow-lg">
-            <span className="material-symbols-outlined text-3xl"><FontAwesomeIcon icon={faMoneyBills} /></span>
-            <span className="font-semibold">Book an Appointment</span>
-          </div>
-        </div>
+<div className="flex flex-col sm:flex-row gap-4 w-full absolute bottom-0 translate-y-1/2 px-4">
+  <div className="flex-1 bg-blue-900 text-white dark:bg-blue-800 rounded-lg p-5 flex items-center gap-2 shadow-lg">
+    <span className="material-symbols-outlined text-3xl"><FontAwesomeIcon icon={faCalendarDays} /></span>
+    <span className="font-semibold">Book an Appointment</span>
+  </div>
+  <div className="flex-1 bg-blue-100 text-blue-900 dark:bg-blue-700 dark:text-white rounded-lg p-5 flex items-center gap-2 shadow-lg">
+    <span className="material-symbols-outlined text-3xl"><FontAwesomeIcon icon={faUsers} /></span>
+    <span className="font-semibold">Book an Appointment</span>
+  </div>
+  <div className="flex-1 bg-blue-400 text-white dark:bg-blue-600 dark:text-white rounded-lg p-5 flex items-center gap-2 shadow-lg">
+    <span className="material-symbols-outlined text-3xl"><FontAwesomeIcon icon={faMoneyBills} /></span>
+    <span className="font-semibold">Book an Appointment</span>
+  </div>
+</div>
+
     </section>
 
 
