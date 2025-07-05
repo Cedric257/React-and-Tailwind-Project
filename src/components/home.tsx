@@ -1,11 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import NavBars from "./navbars";
 import { faCalendarDays, faMoneyBills, faUsers } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   return (
     <div className="bg-gray-50 dark:bg-blue-950 min-h-screen flex flex-col">
-      <NavBars />
     <section className="relative z-10 flex flex-col justify-center items-center w-full  px-6 py-24 mx-auto">
       <div className="absolute inset-0">
         <img
